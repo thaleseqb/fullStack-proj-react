@@ -1,9 +1,27 @@
-import "./Header.css"
 import Logo from "../Logo";
 import HeaderItems from "./HeaderItems";
 import bag from "../../assets/sacola.svg"
 import profile from "../../assets/perfil.svg"
 import HeaderIcons from "./HeaderIcons";
+import styled from "styled-components";
+
+
+const HeaderContainer = styled.header`
+    display: flex;
+    justify-content: center;
+    background-color: #FFF;
+`
+
+const ListOptionsContainer = styled.ul`
+    display: flex;
+    align-items: center;
+`
+
+const IconsContainer = styled.ul`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
 
 const Header = () => {
 
@@ -25,27 +43,30 @@ const Header = () => {
     ]
 
     return (
-        <header className="header">
+        <HeaderContainer>
             <Logo/>
-            <ul className="list">
-                {options.map(option => {
-                    return (
-                        <HeaderItems name={option} />
-                    )
-                })}
-            </ul>
 
-            <ul className="icons" >
+            <ListOptionsContainer>
+                {options.map(option => {
+                        return (
+                            <HeaderItems key={option} name={option} />
+                        )
+                    })}
+            </ListOptionsContainer>
+
+            <IconsContainer>
                 {icons.map(icon => {
-                    return (
-                        <HeaderIcons 
-                            image={icon.image}
-                            description={icon.description}
-                        />
-                    )
-                })}
-            </ul>
-        </header>
+                        return (
+                            <HeaderIcons
+                                key={icon.description} 
+                                image={icon.image}
+                                description={icon.description}
+                            />
+                        )
+                    })}
+            </IconsContainer>
+
+        </HeaderContainer>
     )
 }
 
