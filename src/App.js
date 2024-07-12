@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Header from './Components/Header';
+import Search from './Components/Search';
 
 const AppContainer = styled.div`
   width: 100vw;
@@ -11,6 +12,10 @@ function App() {
   return (
     <AppContainer>
       <Header/>
+      <Search
+        type={"text"}
+        placeholder={"Escreva sua primeira leitura"}
+      />
     </AppContainer>
   );
 }
