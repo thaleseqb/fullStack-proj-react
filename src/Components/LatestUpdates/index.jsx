@@ -1,6 +1,8 @@
+import Card from "../Card"
 import { BigTitle } from "../Title"
 import {books} from "./DataLastUpdates"
 import styled from "styled-components"
+import bookImage from "../../assets/livro2.png"
 
 const LastUpContainer = styled.section`
         background-color: #EBECEE;
@@ -34,7 +36,12 @@ const LastUpdates = () => {
                     )
                 })}
             </DivContainer>
-            
+            <Card 
+                image={bookImage}
+                title={"Talvez você se interesse por"}
+                subtitle={"Angular 11"}
+                description={"Construindo uma aplicação integrada com a plataforma google"}
+            />
         </LastUpContainer>
         
     )
