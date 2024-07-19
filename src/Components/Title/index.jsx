@@ -5,7 +5,7 @@ export const BigTitle = styled.h2`
     padding: 30px 0;
     background-color: #FFF;
     color: ${props => props.color || "#000"};
-    font-size: ${props => props.sizeFont || "18px"};
+    font-size: ${props => props.sizefont || "18px"};
     text-align: ${props => props.alignment || "center"};
     margin: 0;
 `

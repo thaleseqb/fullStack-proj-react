@@ -48,7 +48,7 @@ const Card = ({title, subtitle, description, image}) => {
     return (
         <CardContainer>
             <div>
-                <BigTitle sizeFont="16px" color="#eb9b00" alignment="left">
+                <BigTitle sizefont="16px" color="#eb9b00" alignment="left">
                     Talvez você tenha interesse por
                 </BigTitle>
                 <Subtitle>{subtitle}</Subtitle>

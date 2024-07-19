@@ -24,7 +24,7 @@ const LastUpdates = () => {
         <LastUpContainer>
             <BigTitle 
                 color="#EB9B00"
-                sizeFont="36px"
+                sizefont="36px"
                 alignment="center"
             >
                 ÚLTIMOS LANÇAMENTOS
