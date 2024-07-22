@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { getBooks } from "../../Services/books";
+import { postFav } from "../../Services/favoritos";
 
 const Input = styled.input`
     order: 1px solid #FFF;
@@ -68,6 +69,11 @@ const Search = ({placeholder, type}) => {
         setBooks(apiBooks);
     }
 
+    async function insertFav(id) {
+        await postFav(id);
+        alert(`livro inserido, id: ${id}`)
+    }
+
     return (
         <SectionContainer>
             <Title>Já sabe por onde começar ?</Title>
@@ -96,7 +102,7 @@ const Search = ({placeholder, type}) => {
 
             {searchedBooks.map(book => {
                 return (
-                    <SearchResult key={book.nome} >
+                    <SearchResult onClick={() => insertFav(book.id)} key={book.nome} >
                         <img src={book.src} alt={`livro cujo id é ${book.id}`} />
                         <p>{book.nome}</p>
                     </SearchResult>

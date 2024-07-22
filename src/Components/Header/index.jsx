@@ -28,7 +28,7 @@ const Header = () => {
 
     const options = [
         "CATEGORIAS",
-        "MINHA ESTANTE",
+        "ESTANTE",
         "FAVORITOS"
     ]
 
@@ -45,7 +45,14 @@ const Header = () => {
 
     return (
         <HeaderContainer>
-            <Link to="/" >
+            <Link
+                style={
+                    {
+                        textDecoration: "none",
+                        color:"black"
+                    }
+                } 
+                to="/" >
                 <Logo/>
             </Link>
 

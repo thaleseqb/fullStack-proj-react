@@ -16,7 +16,14 @@ const Items = styled.li`
 const HeaderItems = ({name}) => {
     return (
         <Items>
-            <Link to={`/${name.toLowerCase()}`}>
+            <Link 
+                style={
+                    {
+                        textDecoration: "none",
+                        color:"black"
+                    }
+                }
+                to={`/${name.toLowerCase()}`}>
                 <p>{name}</p>
             </Link>
         </Items>
