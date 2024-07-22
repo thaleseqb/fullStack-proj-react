@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Items = styled.li`
@@ -15,7 +16,9 @@ const Items = styled.li`
 const HeaderItems = ({name}) => {
     return (
         <Items>
-            <p>{name}</p>
+            <Link to={`/${name.toLowerCase()}`}>
+                <p>{name}</p>
+            </Link>
         </Items>
     )
 }

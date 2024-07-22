@@ -4,6 +4,7 @@ import bag from "../../assets/sacola.svg"
 import profile from "../../assets/perfil.svg"
 import HeaderIcons from "./HeaderIcons";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 
 const HeaderContainer = styled.header`
@@ -44,7 +45,9 @@ const Header = () => {
 
     return (
         <HeaderContainer>
-            <Logo/>
+            <Link to="/" >
+                <Logo/>
+            </Link>
 
             <ListOptionsContainer>
                 {options.map(option => {
