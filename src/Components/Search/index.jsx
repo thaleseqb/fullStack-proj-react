@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { books } from "./data";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
+import { getBooks } from "../../Services/books";
 
 const Input = styled.input`
     order: 1px solid #FFF;
@@ -59,6 +59,14 @@ const SearchResult = styled.div`
 const Search = ({placeholder, type}) => {
 
     const [searchedBooks, setSearchedBooks] = useState([]);
+    const [books, setBooks] = useState([]);
+
+    useEffect(() => {fetchBooks()}, []);
+
+    async function fetchBooks() {
+        const apiBooks = await getBooks();
+        setBooks(apiBooks);
+    }
 
     return (
         <SectionContainer>
@@ -70,13 +78,19 @@ const Search = ({placeholder, type}) => {
                 onBlur={(event) => {
                     const wroteText = event.target.value;
 
-                    const searchResult = books.filter(book => {
-                        return book.
-                            nome.
-                            toLocaleLowerCase().
-                            includes(wroteText.toLocaleLowerCase())  
-                    });
-                    setSearchedBooks(searchResult);
+                    if (! (wroteText.trim() === "")) {
+                        const searchResult = books.filter(book => {
+
+                            return book.
+                                nome.
+                                toLocaleLowerCase().
+                                includes(wroteText.toLocaleLowerCase())  
+                        });
+                        
+                        setSearchedBooks(searchResult);
+                    } else {
+                        setSearchedBooks([]);
+                    }
                 }}
             />
 
